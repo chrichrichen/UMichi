@@ -1,0 +1,15 @@
+import urllib
+import json
+url=input('Enter Url: ')
+u=urllib.request.urlopen(url)
+dat=u.read()
+data=json.loads(dat)
+search_str="comments/comment"
+
+
+total=0
+for tags in data['comments']:
+    total+=tags["count"]
+    
+
+print(total)
